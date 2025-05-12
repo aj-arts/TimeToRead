@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Time to Read</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      width: 220px; /* Slightly wider for better spacing */
+      padding: 15px;
+      background-color: #f8f9fa; /* Light gray background */
+      color: #212529; /* Darker text for contrast */
+      text-align: center;
+      border-radius: 8px; /* Rounded corners for the popup */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    }
+    h1 {
+      font-size: 18px;
+      font-weight: 600; /* Semi-bold */
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #343a40; /* Slightly darker heading */
+    }
+    #readingTime {
+      font-size: 24px; /* Larger font for the time */
+      font-weight: 500; /* Medium weight */
+      color: #007bff; /* Blue color for emphasis */
+      margin-top: 5px;
+      margin-bottom: 10px;
+      min-height: 30px; /* Ensure space even when "Calculating..." */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .calculating-dots span {
+      display: inline-block;
+      animation: blink 1.4s infinite both;
+    }
+    .calculating-dots span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .calculating-dots span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    @keyframes blink {
+      0% {
+        opacity: .2;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        opacity: .2;
+      }
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #dee2e6; /* Lighter separator line */
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    .footer-text {
+      font-size: 10px;
+      color: #6c757d; /* Muted color for footer */
+    }
+  </style>
+</head>
+<body>
+  <h1>Time to Read</h1>
+  <hr>
+  <div id="readingTime">Calculating<span class="calculating-dots"><span>.</span><span>.</span><span>.</span></span></div>
+  <hr>
+  <p class="footer-text">Estimated reading time</p>
+  <script src="popup.js"></script>
+</body>
+</html>
